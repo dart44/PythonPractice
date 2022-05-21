@@ -5,7 +5,7 @@ def generate_map(blocks: list, reqs: list):
     map = {}
     for i, block in enumerate(blocks):
         for req in reqs:
-            if block[req] == True:
+            if block[req]:
                 if req in map:
                     map[req].append(i)
                 else:
