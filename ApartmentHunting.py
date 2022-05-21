@@ -15,7 +15,7 @@ def generate_map(blocks: list, reqs: list):
 
 def apartment_hunting(blocks: list, reqs: list) -> int:
     map = generate_map(blocks, reqs)
-    print(map)
+    # print(map)
     best = float(inf)
     best_address = None
     
@@ -25,10 +25,10 @@ def apartment_hunting(blocks: list, reqs: list) -> int:
             closest = float(inf)
             for address in addresses:
                 closest = min(closest, abs(address - i))
-                print(f"closest {req} from block {i} is now {closest}")
+                # print(f"closest {req} from block {i} is now {closest}")
             score += closest
-            print(f"req {req} final closest score for block {i} is {closest}")
-        print(score)
+            # print(f"req {req} final closest score for block {i} is {closest}")
+        # print(score)
         if score == 0: # if this is ever true it means we've found a block with all requirements on it
             return i
         if score < best:
@@ -47,7 +47,7 @@ def main():
             {'school': False, 'gym': False, 'cafe': False},
             {'school': False, 'gym': False, 'cafe': True}]
     
-    requirements = ['gym', 'school', 'cafe']
+    requirements = ['gym', 'school']
     
     print(f"Best address is: {apartment_hunting(town, requirements)}")
 
