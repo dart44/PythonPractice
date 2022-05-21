@@ -47,7 +47,7 @@ def main():
             {'school': False, 'gym': False, 'cafe': False},
             {'school': False, 'gym': False, 'cafe': True}]
     
-    requirements = ['gym', 'school']
+    requirements = ['gym', 'school', 'cafe']
     
     print(f"Best address is: {apartment_hunting(town, requirements)}")
 
