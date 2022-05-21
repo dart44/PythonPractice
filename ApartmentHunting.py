@@ -5,7 +5,7 @@ def generate_map(blocks: list, reqs: list):
     map = {}
     for i, block in enumerate(blocks):
         for req in reqs:
-            if block[req]:
+            if block[req] == True:
                 if req in map:
                     map[req].append(i)
                 else:
@@ -15,7 +15,7 @@ def generate_map(blocks: list, reqs: list):
 def apartment_hunting(blocks: list, reqs: list) -> int:
     map = generate_map(blocks, reqs)
     # print(map)
-    best_score = float(inf)
+    best = float(inf)
     best_address = None
     
     for i in range(len(blocks)):
@@ -30,8 +30,8 @@ def apartment_hunting(blocks: list, reqs: list) -> int:
         # print(score)
         if score == 0: # if this is ever true it means we've found a block with all requirements on it
             return i
-        if score < best_score:
-            best_score = score
+        if score < best:
+            best = score
             best_address = i
     return best_address
 
