@@ -1,7 +1,6 @@
 from cmath import inf
 import time
 
-# I think this is O(n^4)?
 def generate_map(blocks: list, reqs: list):
     map = {}
     for i, block in enumerate(blocks):
